@@ -1,0 +1,39 @@
+@use '../../lib/spotify.scss' as spotify;
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header__nav {
+        display: flex;
+        gap: 32px;
+
+        img {
+            height: 36px;
+            width: 36px;
+        }
+    }
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    .card__title {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .card__text {
+        font-size: 16px;
+        color: #BDBDBD;
+    }
+}
+
+.card__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

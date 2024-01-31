@@ -1,0 +1,27 @@
+<main class="main">
+    <div class="main__content">
+        <div class="header">
+            <form method="POST" action="/spotify-search">
+                <img src="/svg/search.svg" alt="">
+                <input type="text" placeholder="Введите название плейлиста" name="wordToSearch">
+                <button>Поиск</button>
+            </form>
+        </div>
+        {{#if data.playList}}
+            <ul class="card">
+                {{#each data.playList}}
+                <a href="/spotify-playlist?id={{id}}">
+                    <li class="card__item">
+                        <img src="https://picsum.photos/325/325" alt="">
+                        <strong class="card__title">{{name}}</strong>
+                        <p class="card__text">{{ tracks.length }} &nbsp;треков</p>
+                    </li>
+                </a>
+                {{/each}}
+                
+            </ul>
+        {{else}}
+            <h1 class="title title--center">Ничего не найдено</h1>
+        {{/if}}
+    </div>
+</main>

@@ -1,0 +1,27 @@
+<main class="main">
+    {{#with data}}
+    <div class="main__content">
+        <header class="header">
+            <a href="/spotify-playlist?id={{playlistId}}">
+                <img src="/svg/cross_back.svg" alt="">
+            </a>
+        </header>
+        <h1 class="title title--center">{{name}}</h1>
+
+        <ul class="track__list">
+            {{#each trackList}}
+                <li class="track">
+                    <img src="{{image}}" alt="">
+                    <div class="track__content">
+                        <strong class="track__name">{{name}}</strong>
+                        <em class="track__author">{{author}}</em>
+                    </div>
+                    <a href="/spotify-track-add?trackId={{id}}&playlistId={{../playlistId}}">
+                        <img src="/svg/add_track.svg" alt="">
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/with}}
+</main>
