@@ -3,8 +3,6 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
-const Test = require('../class/test')
-
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -14,20 +12,18 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('index', {
+  res.render('calc', {
     // вказуємо назву контейнера
-    name: 'index',
+    name: 'calc',
     // вказуємо назву компонентів
-    component: ['heading'],
+    component: [],
 
     // вказуємо назву сторінки
-    title: 'Назва сторінки',
+    title: 'Calculator',
     // ... сюди можна далі продовжувати додавати потрібні технічні дані, які будуть використовуватися в layout
 
     // вказуємо дані,
-    data: {
-      test: new Test().test,
-    },
+    data: {},
   })
   // ↑↑ сюди вводимо JSON дані
 })
